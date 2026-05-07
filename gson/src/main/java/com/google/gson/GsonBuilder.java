@@ -907,7 +907,7 @@ public final class GsonBuilder {
    */
   @CanIgnoreReturnValue
   public GsonBuilder addReflectionAccessFilter(ReflectionAccessFilter filter) {
-    Objects.requireNonNull(filter);
+    Objects.requireNonNull(filter, "filter == null");
     reflectionFilters.addFirst(filter);
     return this;
   }

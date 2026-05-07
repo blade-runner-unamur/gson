@@ -107,16 +107,15 @@ public final class ConstructorConstructor {
     // first try an instance creator
 
     @SuppressWarnings("unchecked") // types must agree
-    InstanceCreator<T> typeCreator = (InstanceCreator<T>) instanceCreators.get(type);
+    InstanceCreator<T> typeCreator = (InstanceCreator<T>) instanceCreators.get(typeToken.getType());
     if (typeCreator != null) {
-      return new InstanceCreatorConstructor<>(typeCreator, type);
+      return new InstanceCreatorConstructor<>(typeCreator, typeToken.getType());
     }
 
     // Next try raw type match for instance creators
-    @SuppressWarnings("unchecked") // types must agree
     InstanceCreator<T> rawTypeCreator = (InstanceCreator<T>) instanceCreators.get(rawType);
     if (rawTypeCreator != null) {
-      return new InstanceCreatorConstructor<>(rawTypeCreator, type);
+      return new InstanceCreatorConstructor<>(rawTypeCreator, typeToken.getType());
     }
 
     // First consider special constructors before checking for no-args constructors

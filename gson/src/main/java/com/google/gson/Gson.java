@@ -1190,7 +1190,8 @@ public final class Gson {
     if (json == null) {
       return null;
     }
-    return fromJson(new JsonTreeReader(json), typeOfT);
+    JsonReader jsonReader = new JsonTreeReader(json);
+    return fromJson(jsonReader, typeOfT);
   }
 
   private static void assertFullConsumption(Object obj, JsonReader reader) {

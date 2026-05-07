@@ -67,6 +67,7 @@ public final class Streams {
 
   /** Writes the JSON element to the writer, recursively. */
   public static void write(JsonElement element, JsonWriter writer) throws IOException {
+    Objects.requireNonNull(writer, "writer == null");
     JsonElementTypeAdapter.ADAPTER.write(writer, element);
   }
 
