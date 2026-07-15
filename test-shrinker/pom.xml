@@ -97,7 +97,11 @@
             <option>-include</option><option>${project.basedir}/../gson/src/main/resources/META-INF/proguard/gson.pro</option>
           </options>
           <libs>
-            <lib>${java.home}/lib/modules</lib>
+            <lib>${java.home}/jmods/java.base.jmod</lib>
+            <!-- Used by Gson for optional SQL types support -->
+            <lib>${java.home}/jmods/java.sql.jmod</lib>
+            <!-- Used by transitive Error Prone annotations dependency -->
+            <lib>${java.home}/jmods/java.compiler.jmod</lib>
           </libs>
           <!-- Include dependencies in the final JAR -->
           <includeDependencyInjar>true</includeDependencyInjar>

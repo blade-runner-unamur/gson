@@ -38,8 +38,8 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.release>17</maven.compiler.release>
-    <maven.compiler.testRelease>17</maven.compiler.testRelease>
+    <maven.compiler.release>8</maven.compiler.release>
+    <maven.compiler.testRelease>11</maven.compiler.testRelease>
 
     <!-- Make the build reproducible, see https://maven.apache.org/guides/mini/guide-reproducible-builds.html -->
     <!-- Automatically updated by Maven Release Plugin -->
@@ -126,7 +126,7 @@
                   <!-- Also disallow too new JDK versions; they might introduce new lints, drop support
                     for older compiler Java target versions or cause issues for some Maven plugins.
                     Failing fast for such versions is better than failing with a confusing error during build. -->
-                  <version>[17,26)</version>
+                  <version>[17,22)</version>
                 </requireJavaVersion>
               </rules>
             </configuration>
