@@ -19,7 +19,6 @@ package com.google.gson.internal.bind;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonPrimitive;
-import com.google.gson.JsonSyntaxException;
 import com.google.gson.TypeAdapter;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.internal.ConstructorConstructor;
@@ -188,9 +187,6 @@ public final class MapTypeAdapterFactory implements TypeAdapterFactory {
           in.beginArray(); // entry array
           K key = keyTypeAdapter.read(in);
           V value = valueTypeAdapter.read(in);
-          if (map.containsKey(key)) {
-            throw new JsonSyntaxException("duplicate key: " + key);
-          }
           map.put(key, value);
           in.endArray();
         }
@@ -201,9 +197,6 @@ public final class MapTypeAdapterFactory implements TypeAdapterFactory {
           JsonReaderInternalAccess.INSTANCE.promoteNameToValue(in);
           K key = keyTypeAdapter.read(in);
           V value = valueTypeAdapter.read(in);
-          if (map.containsKey(key)) {
-            throw new JsonSyntaxException("duplicate key: " + key);
-          }
           map.put(key, value);
         }
         in.endObject();

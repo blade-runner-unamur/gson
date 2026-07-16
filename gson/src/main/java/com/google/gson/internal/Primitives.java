@@ -29,7 +29,7 @@ public final class Primitives {
 
   /** Returns true if this type is a primitive. */
   public static boolean isPrimitive(Type type) {
-    return type instanceof Class<?> && ((Class<?>) type).isPrimitive();
+    return (type instanceof Class<?>) && ((Class<?>) type).isPrimitive();
   }
 
   /**
