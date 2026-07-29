@@ -62,16 +62,16 @@ public class PerformanceTest {
     StringBuilder sb = new StringBuilder(8096);
     sb.append("Error Yippie");
 
-    while (true) {
-      try {
-        String stackTrace = sb.toString();
-        sb.append(stackTrace);
-        String json = "{\"message\":\"Error message.\"," + "\"stackTrace\":\"" + stackTrace + "\"}";
-        parseLongJson(json);
-        System.out.println("Gson could handle a string of size: " + stackTrace.length());
-      } catch (JsonParseException expected) {
-        break;
-      }
+     while (true) {
+       try {
+         String stackTrace = sb.toString();
+         sb.append(stackTrace);
+         String json = "{\"message\":\"Error message.\"," + "\"stackTrace\":\"" + stackTrace + "\"}";
+         parseLongJson(json);
+         System.out.println("Gson could handle a string of size: " + stackTrace.length());
+       } catch (JsonParseException expected) {
+         break;
+       }
     }
   }
 

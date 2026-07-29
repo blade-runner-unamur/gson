@@ -241,8 +241,8 @@ public final class JsonTreeWriter extends JsonWriter {
     throw new UnsupportedOperationException();
   }
 
-  @Override
-  public void flush() throws IOException {}
+   @Override
+   public void flush() throws IOException {}
 
   @Override
   public void close() throws IOException {
