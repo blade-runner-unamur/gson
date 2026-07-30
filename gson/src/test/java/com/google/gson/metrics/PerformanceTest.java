@@ -56,11 +56,11 @@ public class PerformanceTest {
     // This is here to prevent Junit for complaining when we disable all tests.
   }
 
-  @Test
-  @Ignore
-  public void testStringDeserialization() {
-    StringBuilder sb = new StringBuilder(8096);
-    sb.append("Error Yippie");
+   @Test
+   @Ignore
+   public void testStringDeserialization() {
+     StringBuilder sb = new StringBuilder(8096);
+     sb.append("Error Yippie");
 
      while (true) {
        try {
@@ -72,8 +72,8 @@ public class PerformanceTest {
        } catch (JsonParseException expected) {
          break;
        }
-    }
-  }
+     }
+   }
 
   private void parseLongJson(String json) throws JsonParseException {
     ExceptionHolder target = gson.fromJson(json, ExceptionHolder.class);
